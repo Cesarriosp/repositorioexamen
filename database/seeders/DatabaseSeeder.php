@@ -35,5 +35,12 @@ class DatabaseSeeder extends Seeder
                 ]);
             });
         });
+
+        // Seed products from remote repository
+        if (class_exists(ProductSeeder::class)) {
+            $this->call([
+                ProductSeeder::class,
+            ]);
+        }
     }
 }
